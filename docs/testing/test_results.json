@@ -1,0 +1,938 @@
+{
+  "executedAt": "2026-11-15T17:58:30",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "results": [
+    {
+      "name": "HTTP GET /health",
+      "status": "PASS",
+      "details": null,
+      "seconds": 0.042
+    },
+    {
+      "name": "HTTP GET /",
+      "status": "PASS",
+      "details": null,
+      "seconds": 0.092
+    },
+    {
+      "name": "HTTP GET /app.js",
+      "status": "PASS",
+      "details": null,
+      "seconds": 0.002
+    },
+    {
+      "name": "HTTP GET /styles.css",
+      "status": "PASS",
+      "details": null,
+      "seconds": 0.002
+    },
+    {
+      "name": "JPG Unicode text roundtrip LSB=1",
+      "status": "PASS",
+      "details": {
+        "sha256": "3222e152757eced1ecb531873949f5a57b41cc23e442a402293aa4d9dfa3dfb5",
+        "payloadBytes": 95,
+        "outputBytes": 1377881,
+        "lsb": 1
+      },
+      "seconds": 1.435
+    },
+    {
+      "name": "WAV Unicode text roundtrip LSB=1",
+      "status": "PASS",
+      "details": {
+        "sha256": "3222e152757eced1ecb531873949f5a57b41cc23e442a402293aa4d9dfa3dfb5",
+        "payloadBytes": 95,
+        "outputBytes": 3840044,
+        "lsb": 1
+      },
+      "seconds": 0.283
+    },
+    {
+      "name": "JPG Unicode text roundtrip LSB=2",
+      "status": "PASS",
+      "details": {
+        "sha256": "3222e152757eced1ecb531873949f5a57b41cc23e442a402293aa4d9dfa3dfb5",
+        "payloadBytes": 95,
+        "outputBytes": 1377730,
+        "lsb": 2
+      },
+      "seconds": 1.33
+    },
+    {
+      "name": "WAV Unicode text roundtrip LSB=2",
+      "status": "PASS",
+      "details": {
+        "sha256": "3222e152757eced1ecb531873949f5a57b41cc23e442a402293aa4d9dfa3dfb5",
+        "payloadBytes": 95,
+        "outputBytes": 3840044,
+        "lsb": 2
+      },
+      "seconds": 0.355
+    },
+    {
+      "name": "JPG Unicode text roundtrip LSB=3",
+      "status": "PASS",
+      "details": {
+        "sha256": "3222e152757eced1ecb531873949f5a57b41cc23e442a402293aa4d9dfa3dfb5",
+        "payloadBytes": 95,
+        "outputBytes": 1377653,
+        "lsb": 3
+      },
+      "seconds": 1.308
+    },
+    {
+      "name": "WAV Unicode text roundtrip LSB=3",
+      "status": "PASS",
+      "details": {
+        "sha256": "3222e152757eced1ecb531873949f5a57b41cc23e442a402293aa4d9dfa3dfb5",
+        "payloadBytes": 95,
+        "outputBytes": 3840044,
+        "lsb": 3
+      },
+      "seconds": 0.316
+    },
+    {
+      "name": "JPG Unicode text roundtrip LSB=4",
+      "status": "PASS",
+      "details": {
+        "sha256": "3222e152757eced1ecb531873949f5a57b41cc23e442a402293aa4d9dfa3dfb5",
+        "payloadBytes": 95,
+        "outputBytes": 1377565,
+        "lsb": 4
+      },
+      "seconds": 1.384
+    },
+    {
+      "name": "WAV Unicode text roundtrip LSB=4",
+      "status": "PASS",
+      "details": {
+        "sha256": "3222e152757eced1ecb531873949f5a57b41cc23e442a402293aa4d9dfa3dfb5",
+        "payloadBytes": 95,
+        "outputBytes": 3840044,
+        "lsb": 4
+      },
+      "seconds": 0.285
+    },
+    {
+      "name": "JPG Unicode text roundtrip LSB=5",
+      "status": "PASS",
+      "details": {
+        "sha256": "3222e152757eced1ecb531873949f5a57b41cc23e442a402293aa4d9dfa3dfb5",
+        "payloadBytes": 95,
+        "outputBytes": 1377619,
+        "lsb": 5
+      },
+      "seconds": 1.268
+    },
+    {
+      "name": "WAV Unicode text roundtrip LSB=5",
+      "status": "PASS",
+      "details": {
+        "sha256": "3222e152757eced1ecb531873949f5a57b41cc23e442a402293aa4d9dfa3dfb5",
+        "payloadBytes": 95,
+        "outputBytes": 3840044,
+        "lsb": 5
+      },
+      "seconds": 0.311
+    },
+    {
+      "name": "JPG Unicode text roundtrip LSB=6",
+      "status": "PASS",
+      "details": {
+        "sha256": "3222e152757eced1ecb531873949f5a57b41cc23e442a402293aa4d9dfa3dfb5",
+        "payloadBytes": 95,
+        "outputBytes": 1377669,
+        "lsb": 6
+      },
+      "seconds": 1.376
+    },
+    {
+      "name": "WAV Unicode text roundtrip LSB=6",
+      "status": "PASS",
+      "details": {
+        "sha256": "3222e152757eced1ecb531873949f5a57b41cc23e442a402293aa4d9dfa3dfb5",
+        "payloadBytes": 95,
+        "outputBytes": 3840044,
+        "lsb": 6
+      },
+      "seconds": 0.284
+    },
+    {
+      "name": "JPG Unicode text roundtrip LSB=7",
+      "status": "PASS",
+      "details": {
+        "sha256": "3222e152757eced1ecb531873949f5a57b41cc23e442a402293aa4d9dfa3dfb5",
+        "payloadBytes": 95,
+        "outputBytes": 1377806,
+        "lsb": 7
+      },
+      "seconds": 1.411
+    },
+    {
+      "name": "WAV Unicode text roundtrip LSB=7",
+      "status": "PASS",
+      "details": {
+        "sha256": "3222e152757eced1ecb531873949f5a57b41cc23e442a402293aa4d9dfa3dfb5",
+        "payloadBytes": 95,
+        "outputBytes": 3840044,
+        "lsb": 7
+      },
+      "seconds": 0.337
+    },
+    {
+      "name": "JPG Unicode text roundtrip LSB=8",
+      "status": "PASS",
+      "details": {
+        "sha256": "3222e152757eced1ecb531873949f5a57b41cc23e442a402293aa4d9dfa3dfb5",
+        "payloadBytes": 95,
+        "outputBytes": 1377639,
+        "lsb": 8
+      },
+      "seconds": 1.328
+    },
+    {
+      "name": "WAV Unicode text roundtrip LSB=8",
+      "status": "PASS",
+      "details": {
+        "sha256": "3222e152757eced1ecb531873949f5a57b41cc23e442a402293aa4d9dfa3dfb5",
+        "payloadBytes": 95,
+        "outputBytes": 3840044,
+        "lsb": 8
+      },
+      "seconds": 0.258
+    },
+    {
+      "name": "Image format image_carrier.png",
+      "status": "PASS",
+      "details": {
+        "sha256": "3222e152757eced1ecb531873949f5a57b41cc23e442a402293aa4d9dfa3dfb5",
+        "payloadBytes": 95,
+        "outputBytes": 1377730,
+        "lsb": 2
+      },
+      "seconds": 1.499
+    },
+    {
+      "name": "Image format image_carrier.bmp",
+      "status": "PASS",
+      "details": {
+        "sha256": "3222e152757eced1ecb531873949f5a57b41cc23e442a402293aa4d9dfa3dfb5",
+        "payloadBytes": 95,
+        "outputBytes": 1377454,
+        "lsb": 2
+      },
+      "seconds": 1.498
+    },
+    {
+      "name": "Image format image_rgba.png",
+      "status": "PASS",
+      "details": {
+        "sha256": "3222e152757eced1ecb531873949f5a57b41cc23e442a402293aa4d9dfa3dfb5",
+        "payloadBytes": 95,
+        "outputBytes": 71921,
+        "lsb": 2
+      },
+      "seconds": 0.089
+    },
+    {
+      "name": "Image format image_grayscale.png",
+      "status": "PASS",
+      "details": {
+        "sha256": "3222e152757eced1ecb531873949f5a57b41cc23e442a402293aa4d9dfa3dfb5",
+        "payloadBytes": 95,
+        "outputBytes": 40726,
+        "lsb": 2
+      },
+      "seconds": 0.054
+    },
+    {
+      "name": ".jpg file roundtrip secret_text_utf8.txt",
+      "status": "PASS",
+      "details": {
+        "sha256": "7e8c2f973618cc743641f97b3385968425ff7deaa36dbc9b06b8dc14323c654c",
+        "payloadBytes": 97,
+        "outputBytes": 1377743,
+        "lsb": 2
+      },
+      "seconds": 1.363
+    },
+    {
+      "name": ".wav file roundtrip secret_text_utf8.txt",
+      "status": "PASS",
+      "details": {
+        "sha256": "7e8c2f973618cc743641f97b3385968425ff7deaa36dbc9b06b8dc14323c654c",
+        "payloadBytes": 97,
+        "outputBytes": 3840044,
+        "lsb": 2
+      },
+      "seconds": 0.334
+    },
+    {
+      "name": ".jpg file roundtrip payload_binary.bin",
+      "status": "PASS",
+      "details": {
+        "sha256": "c8f5d0341d54d951a71b136e6e2afcb14d11ed8489a7ae126a8fee0df6ecf193",
+        "payloadBytes": 4096,
+        "outputBytes": 1381265,
+        "lsb": 2
+      },
+      "seconds": 1.357
+    },
+    {
+      "name": ".wav file roundtrip payload_binary.bin",
+      "status": "PASS",
+      "details": {
+        "sha256": "c8f5d0341d54d951a71b136e6e2afcb14d11ed8489a7ae126a8fee0df6ecf193",
+        "payloadBytes": 4096,
+        "outputBytes": 3840044,
+        "lsb": 2
+      },
+      "seconds": 0.294
+    },
+    {
+      "name": ".jpg file roundtrip payload_image.jpg",
+      "status": "PASS",
+      "details": {
+        "sha256": "b69cb126fa58644d13fbdb31858b61df67fcee90ff9275d68c9b58f3e11df869",
+        "payloadBytes": 163488,
+        "outputBytes": 1584078,
+        "lsb": 2
+      },
+      "seconds": 1.386
+    },
+    {
+      "name": ".wav file roundtrip payload_image.jpg",
+      "status": "PASS",
+      "details": {
+        "sha256": "b69cb126fa58644d13fbdb31858b61df67fcee90ff9275d68c9b58f3e11df869",
+        "payloadBytes": 163488,
+        "outputBytes": 3840044,
+        "lsb": 2
+      },
+      "seconds": 0.368
+    },
+    {
+      "name": ".jpg file roundtrip payload_audio.wav",
+      "status": "PASS",
+      "details": {
+        "sha256": "ec17771ddb20eec5ee4a67ad43a8b376bb5c1b2a6b836f5d967405947d9a8624",
+        "payloadBytes": 96078,
+        "outputBytes": 1470892,
+        "lsb": 2
+      },
+      "seconds": 1.373
+    },
+    {
+      "name": ".wav file roundtrip payload_audio.wav",
+      "status": "PASS",
+      "details": {
+        "sha256": "ec17771ddb20eec5ee4a67ad43a8b376bb5c1b2a6b836f5d967405947d9a8624",
+        "payloadBytes": 96078,
+        "outputBytes": 3840044,
+        "lsb": 2
+      },
+      "seconds": 0.373
+    },
+    {
+      "name": ".jpg file roundtrip payload_music.mp3",
+      "status": "PASS",
+      "details": {
+        "sha256": "b0aa5da41f145a83063802d5a0880e74a463aecee37cd1c2038fd5b2e6242d10",
+        "payloadBytes": 40954,
+        "outputBytes": 1432532,
+        "lsb": 2
+      },
+      "seconds": 1.395
+    },
+    {
+      "name": ".wav file roundtrip payload_music.mp3",
+      "status": "PASS",
+      "details": {
+        "sha256": "b0aa5da41f145a83063802d5a0880e74a463aecee37cd1c2038fd5b2e6242d10",
+        "payloadBytes": 40954,
+        "outputBytes": 3840044,
+        "lsb": 2
+      },
+      "seconds": 0.321
+    },
+    {
+      "name": ".jpg file roundtrip payload_video_5s.mp4",
+      "status": "PASS",
+      "details": {
+        "sha256": "c837eb013ab0d127bbf4d373f1686bca586ef8a91aa74d49e1c07cea81bddeec",
+        "payloadBytes": 130559,
+        "outputBytes": 1543339,
+        "lsb": 2
+      },
+      "seconds": 1.425
+    },
+    {
+      "name": ".wav file roundtrip payload_video_5s.mp4",
+      "status": "PASS",
+      "details": {
+        "sha256": "c837eb013ab0d127bbf4d373f1686bca586ef8a91aa74d49e1c07cea81bddeec",
+        "payloadBytes": 130559,
+        "outputBytes": 3840044,
+        "lsb": 2
+      },
+      "seconds": 0.376
+    },
+    {
+      "name": "Unicode payload filename",
+      "status": "PASS",
+      "details": {
+        "sha256": "7e420ef6d47c7d91be9c669604d118c803a106f517714b5f06a62bebc72b4684",
+        "payloadBytes": 17,
+        "outputBytes": 1377534,
+        "lsb": 2
+      },
+      "seconds": 1.357
+    },
+    {
+      "name": "Full extracted music carrier",
+      "status": "PASS",
+      "details": {
+        "sha256": "3222e152757eced1ecb531873949f5a57b41cc23e442a402293aa4d9dfa3dfb5",
+        "payloadBytes": 95,
+        "outputBytes": 42045484,
+        "lsb": 2
+      },
+      "seconds": 2.952
+    },
+    {
+      "name": "PCM 8-bit byte recovery",
+      "status": "PASS",
+      "details": {
+        "sha256": "3222e152757eced1ecb531873949f5a57b41cc23e442a402293aa4d9dfa3dfb5",
+        "payloadBytes": 95,
+        "outputBytes": 8044,
+        "lsb": 2
+      },
+      "seconds": 0.033
+    },
+    {
+      "name": "PCM 8-bit true least-significant-bit fidelity",
+      "status": "PASS",
+      "details": {
+        "maxSampleDelta": 3
+      },
+      "seconds": 0.003
+    },
+    {
+      "name": "PCM 16-bit byte recovery",
+      "status": "PASS",
+      "details": {
+        "sha256": "3222e152757eced1ecb531873949f5a57b41cc23e442a402293aa4d9dfa3dfb5",
+        "payloadBytes": 95,
+        "outputBytes": 16044,
+        "lsb": 2
+      },
+      "seconds": 0.044
+    },
+    {
+      "name": "PCM 16-bit true least-significant-bit fidelity",
+      "status": "PASS",
+      "details": {
+        "maxSampleDelta": 3
+      },
+      "seconds": 0.003
+    },
+    {
+      "name": "PCM 24-bit byte recovery",
+      "status": "PASS",
+      "details": {
+        "sha256": "3222e152757eced1ecb531873949f5a57b41cc23e442a402293aa4d9dfa3dfb5",
+        "payloadBytes": 95,
+        "outputBytes": 24044,
+        "lsb": 2
+      },
+      "seconds": 0.046
+    },
+    {
+      "name": "PCM 24-bit true least-significant-bit fidelity",
+      "status": "PASS",
+      "details": {
+        "maxSampleDelta": 3
+      },
+      "seconds": 0.003
+    },
+    {
+      "name": "PCM 32-bit byte recovery",
+      "status": "PASS",
+      "details": {
+        "sha256": "3222e152757eced1ecb531873949f5a57b41cc23e442a402293aa4d9dfa3dfb5",
+        "payloadBytes": 95,
+        "outputBytes": 32044,
+        "lsb": 2
+      },
+      "seconds": 0.059
+    },
+    {
+      "name": "PCM 32-bit true least-significant-bit fidelity",
+      "status": "PASS",
+      "details": {
+        "maxSampleDelta": 3
+      },
+      "seconds": 0.006
+    },
+    {
+      "name": "image capacity LSB=1",
+      "status": "PASS",
+      "details": {
+        "width": 2133,
+        "height": 1199,
+        "channels": 3,
+        "numLsb": 1,
+        "capacityBytes": 959047,
+        "tagBytes": 3,
+        "payloadBytes": 95,
+        "storedBytes": 179,
+        "fits": true
+      },
+      "seconds": 0.035
+    },
+    {
+      "name": "image capacity LSB=2",
+      "status": "PASS",
+      "details": {
+        "width": 2133,
+        "height": 1199,
+        "channels": 3,
+        "numLsb": 2,
+        "capacityBytes": 1918097,
+        "tagBytes": 3,
+        "payloadBytes": 95,
+        "storedBytes": 179,
+        "fits": true
+      },
+      "seconds": 0.043
+    },
+    {
+      "name": "image capacity LSB=4",
+      "status": "PASS",
+      "details": {
+        "width": 2133,
+        "height": 1199,
+        "channels": 3,
+        "numLsb": 4,
+        "capacityBytes": 3836196,
+        "tagBytes": 4,
+        "payloadBytes": 95,
+        "storedBytes": 179,
+        "fits": true
+      },
+      "seconds": 0.031
+    },
+    {
+      "name": "image capacity LSB=8",
+      "status": "PASS",
+      "details": {
+        "width": 2133,
+        "height": 1199,
+        "channels": 3,
+        "numLsb": 8,
+        "capacityBytes": 7672397,
+        "tagBytes": 4,
+        "payloadBytes": 95,
+        "storedBytes": 179,
+        "fits": true
+      },
+      "seconds": 0.046
+    },
+    {
+      "name": "image missing carrier rejected",
+      "status": "PASS",
+      "details": {
+        "ok": false,
+        "error": "请选择载体图片"
+      },
+      "seconds": 0.023
+    },
+    {
+      "name": "image empty secret rejected",
+      "status": "PASS",
+      "details": {
+        "ok": false,
+        "error": "请输入需要隐藏的文本"
+      },
+      "seconds": 0.019
+    },
+    {
+      "name": "image missing payload file rejected",
+      "status": "PASS",
+      "details": {
+        "ok": false,
+        "error": "请选择需要隐藏的文件"
+      },
+      "seconds": 0.03
+    },
+    {
+      "name": "image invalid carrier rejected",
+      "status": "PASS",
+      "details": {
+        "ok": false,
+        "error": "上传文件不是可识别的图片"
+      },
+      "seconds": 0.041
+    },
+    {
+      "name": "image original MP4 exceeds carrier capacity",
+      "status": "PASS",
+      "details": {
+        "ok": false,
+        "error": "隐藏内容为 23573462 字节，当前图片在 2 LSB 下最多可隐藏 1918097 字节"
+      },
+      "seconds": 0.601
+    },
+    {
+      "name": "wav capacity LSB=1",
+      "status": "PASS",
+      "details": {
+        "channels": 2,
+        "sampleWidth": 2,
+        "frameRate": 48000,
+        "frameCount": 960000,
+        "durationSeconds": 20.0,
+        "numLsb": 1,
+        "capacityBytes": 240000,
+        "payloadBytes": 95,
+        "storedBytes": 187,
+        "fits": true
+      },
+      "seconds": 0.16
+    },
+    {
+      "name": "wav capacity LSB=2",
+      "status": "PASS",
+      "details": {
+        "channels": 2,
+        "sampleWidth": 2,
+        "frameRate": 48000,
+        "frameCount": 960000,
+        "durationSeconds": 20.0,
+        "numLsb": 2,
+        "capacityBytes": 480000,
+        "payloadBytes": 95,
+        "storedBytes": 187,
+        "fits": true
+      },
+      "seconds": 0.111
+    },
+    {
+      "name": "wav capacity LSB=4",
+      "status": "PASS",
+      "details": {
+        "channels": 2,
+        "sampleWidth": 2,
+        "frameRate": 48000,
+        "frameCount": 960000,
+        "durationSeconds": 20.0,
+        "numLsb": 4,
+        "capacityBytes": 960000,
+        "payloadBytes": 95,
+        "storedBytes": 187,
+        "fits": true
+      },
+      "seconds": 0.111
+    },
+    {
+      "name": "wav capacity LSB=8",
+      "status": "PASS",
+      "details": {
+        "channels": 2,
+        "sampleWidth": 2,
+        "frameRate": 48000,
+        "frameCount": 960000,
+        "durationSeconds": 20.0,
+        "numLsb": 8,
+        "capacityBytes": 1920000,
+        "payloadBytes": 95,
+        "storedBytes": 187,
+        "fits": true
+      },
+      "seconds": 0.122
+    },
+    {
+      "name": "wav missing carrier rejected",
+      "status": "PASS",
+      "details": {
+        "ok": false,
+        "error": "请选择 WAV 音频"
+      },
+      "seconds": 0.021
+    },
+    {
+      "name": "wav empty secret rejected",
+      "status": "PASS",
+      "details": {
+        "ok": false,
+        "error": "请输入需要隐藏的文本"
+      },
+      "seconds": 0.109
+    },
+    {
+      "name": "wav missing payload file rejected",
+      "status": "PASS",
+      "details": {
+        "ok": false,
+        "error": "请选择需要隐藏的文件"
+      },
+      "seconds": 0.112
+    },
+    {
+      "name": "wav invalid carrier rejected",
+      "status": "PASS",
+      "details": {
+        "ok": false,
+        "error": "上传文件不是有效的 WAV 音频"
+      },
+      "seconds": 0.015
+    },
+    {
+      "name": "wav original MP4 exceeds carrier capacity",
+      "status": "PASS",
+      "details": {
+        "ok": false,
+        "error": "隐藏内容为 23573462 字节，当前 WAV 在 2 LSB 下最多可隐藏 480000 字节"
+      },
+      "seconds": 0.707
+    },
+    {
+      "name": "LSB visualization test_resources/downloads/test.jpg",
+      "status": "PASS",
+      "details": {
+        "width": 2133,
+        "height": 1199,
+        "channels": 3,
+        "numLsb": 1,
+        "outputBytes": 593525
+      },
+      "seconds": 0.762
+    },
+    {
+      "name": "LSB visualization output/testing/image_text_lsb2.png",
+      "status": "PASS",
+      "details": {
+        "width": 2133,
+        "height": 1199,
+        "channels": 3,
+        "numLsb": 1,
+        "outputBytes": 593591
+      },
+      "seconds": 0.723
+    },
+    {
+      "name": "Legacy image payload",
+      "status": "PASS",
+      "details": null,
+      "seconds": 1.204
+    },
+    {
+      "name": "Legacy WAV manual length",
+      "status": "PASS",
+      "details": null,
+      "seconds": 0.104
+    },
+    {
+      "name": "Original WAV requires manual length",
+      "status": "PASS",
+      "details": {
+        "ok": false,
+        "error": "该 WAV 未包含 WebUI 长度标记，请输入需要恢复的字节数"
+      },
+      "seconds": 0.115
+    },
+    {
+      "name": "Wrong image LSB rejected",
+      "status": "PASS",
+      "details": {
+        "ok": false,
+        "error": "This image appears to be corrupted.\nIt claims to hold 16452944 B, but can only hold 959047 B with 1 LSBs"
+      },
+      "seconds": 0.406
+    },
+    {
+      "name": "Wrong WAV LSB rejected",
+      "status": "PASS",
+      "details": {
+        "ok": false,
+        "error": "该 WAV 未包含 WebUI 长度标记，请输入需要恢复的字节数"
+      },
+      "seconds": 0.093
+    },
+    {
+      "name": "image analyze truncated media returns JSON 400",
+      "status": "PASS",
+      "details": {
+        "ok": false,
+        "error": "上传文件不是可识别的图片"
+      },
+      "seconds": 0.028
+    },
+    {
+      "name": "wav analyze truncated media returns JSON 400",
+      "status": "PASS",
+      "details": {
+        "ok": false,
+        "error": "上传文件不是有效的 WAV 音频"
+      },
+      "seconds": 0.002
+    },
+    {
+      "name": "Tiny WAV manual extraction without auto header",
+      "status": "PASS",
+      "details": null,
+      "seconds": 0.015
+    },
+    {
+      "name": "Exact image capacity and one-byte overflow",
+      "status": "PASS",
+      "details": {
+        "capacityBytes": 3070,
+        "secretBytes": 2984
+      },
+      "seconds": 0.018
+    }
+  ],
+  "imageMetrics": [
+    {
+      "carrier": "test.jpg",
+      "payload": "secret.txt",
+      "lsb": 1,
+      "psnrDb": 88.32907679494723,
+      "maxPixelDelta": 1
+    },
+    {
+      "carrier": "test.jpg",
+      "payload": "secret.txt",
+      "lsb": 2,
+      "psnrDb": 84.90377286746889,
+      "maxPixelDelta": 3
+    },
+    {
+      "carrier": "test.jpg",
+      "payload": "secret.txt",
+      "lsb": 3,
+      "psnrDb": 80.35915208717927,
+      "maxPixelDelta": 7
+    },
+    {
+      "carrier": "test.jpg",
+      "payload": "secret.txt",
+      "lsb": 4,
+      "psnrDb": 75.42675616670789,
+      "maxPixelDelta": 14
+    },
+    {
+      "carrier": "test.jpg",
+      "payload": "secret.txt",
+      "lsb": 5,
+      "psnrDb": 69.42235859378889,
+      "maxPixelDelta": 31
+    },
+    {
+      "carrier": "test.jpg",
+      "payload": "secret.txt",
+      "lsb": 6,
+      "psnrDb": 65.27656047381343,
+      "maxPixelDelta": 60
+    },
+    {
+      "carrier": "test.jpg",
+      "payload": "secret.txt",
+      "lsb": 7,
+      "psnrDb": 58.429045770964805,
+      "maxPixelDelta": 123
+    },
+    {
+      "carrier": "test.jpg",
+      "payload": "secret.txt",
+      "lsb": 8,
+      "psnrDb": 57.320666896281416,
+      "maxPixelDelta": 146
+    },
+    {
+      "carrier": "image_carrier.png",
+      "payload": "secret.txt",
+      "lsb": 2,
+      "psnrDb": 84.90377286746889,
+      "maxPixelDelta": 3
+    },
+    {
+      "carrier": "image_carrier.bmp",
+      "payload": "secret.txt",
+      "lsb": 2,
+      "psnrDb": 84.90377286746889,
+      "maxPixelDelta": 3
+    },
+    {
+      "carrier": "image_rgba.png",
+      "payload": "secret.txt",
+      "lsb": 2,
+      "psnrDb": 67.1829612049324,
+      "maxPixelDelta": 3
+    },
+    {
+      "carrier": "image_grayscale.png",
+      "payload": "secret.txt",
+      "lsb": 2,
+      "psnrDb": 66.23807962602518,
+      "maxPixelDelta": 3
+    },
+    {
+      "carrier": "test.jpg",
+      "payload": "secret_text_utf8.txt",
+      "lsb": 2,
+      "psnrDb": 84.94434879157878,
+      "maxPixelDelta": 3
+    },
+    {
+      "carrier": "test.jpg",
+      "payload": "payload_binary.bin",
+      "lsb": 2,
+      "psnrDb": 70.8359960089372,
+      "maxPixelDelta": 3
+    },
+    {
+      "carrier": "test.jpg",
+      "payload": "payload_image.jpg",
+      "lsb": 2,
+      "psnrDb": 54.82689286624052,
+      "maxPixelDelta": 3
+    },
+    {
+      "carrier": "test.jpg",
+      "payload": "payload_audio.wav",
+      "lsb": 2,
+      "psnrDb": 56.37233382339663,
+      "maxPixelDelta": 3
+    },
+    {
+      "carrier": "test.jpg",
+      "payload": "payload_music.mp3",
+      "lsb": 2,
+      "psnrDb": 60.84202590499922,
+      "maxPixelDelta": 3
+    },
+    {
+      "carrier": "test.jpg",
+      "payload": "payload_video_5s.mp4",
+      "lsb": 2,
+      "psnrDb": 55.66036463005257,
+      "maxPixelDelta": 3
+    },
+    {
+      "carrier": "test.jpg",
+      "payload": "毕业设计载荷.bin",
+      "lsb": 2,
+      "psnrDb": 87.60995546671037,
+      "maxPixelDelta": 3
+    }
+  ],
+  "summary": {
+    "total": 75,
+    "passed": 75,
+    "failed": 0
+  }
+}

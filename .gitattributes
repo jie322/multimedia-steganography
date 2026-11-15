@@ -1,0 +1,5 @@
+* text=auto eol=lf
+*.cmd text eol=crlf
+
+# Preserve exact fixture bytes across Windows and other platforms.
+test_resources/payloads/secret_text_utf8.txt -text -diff

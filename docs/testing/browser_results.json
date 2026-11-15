@@ -1,0 +1,78 @@
+{
+  "results": [
+    {
+      "name": "Browser JPG text embed/download/extract",
+      "status": "PASS"
+    },
+    {
+      "name": "Browser JPG hides and downloads restored MP4",
+      "status": "PASS",
+      "details": {
+        "recoveredFile": "output/testing/browser_recovered_video.mp4"
+      }
+    },
+    {
+      "name": "Browser drag-and-drop image upload",
+      "status": "PASS"
+    },
+    {
+      "name": "Browser WAV text embed/download/automatic extract/playback",
+      "status": "PASS",
+      "details": {
+        "duration": 20,
+        "paused": false,
+        "error": null
+      }
+    },
+    {
+      "name": "Browser WAV hides JPG and downloads restored image",
+      "status": "PASS",
+      "details": {
+        "recoveredFile": "output/testing/browser_recovered_image.jpg"
+      }
+    },
+    {
+      "name": "Browser LSB visualization",
+      "status": "PASS"
+    },
+    {
+      "name": "Mobile image/audio/detection layout",
+      "status": "PASS",
+      "details": [
+        {
+          "module": "image",
+          "viewport": 390,
+          "document": 390
+        },
+        {
+          "module": "wav",
+          "viewport": 390,
+          "document": 390
+        },
+        {
+          "module": "detect",
+          "viewport": 390,
+          "document": 390
+        }
+      ]
+    },
+    {
+      "name": "Theme toggle persists after reload",
+      "status": "PASS"
+    },
+    {
+      "name": "Browser empty secret shows error and restores button",
+      "status": "PASS"
+    },
+    {
+      "name": "No uncaught browser JavaScript errors",
+      "status": "PASS"
+    }
+  ],
+  "errors": [],
+  "summary": {
+    "total": 10,
+    "passed": 10,
+    "failed": 0
+  }
+}

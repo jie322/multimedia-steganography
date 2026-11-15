@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>图像隐写系统 · LSB 工作台</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css?v=5" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="currentColor">
+              <rect x="2" y="2" width="8" height="8" rx="1" opacity=".36"/>
+              <rect x="12" y="2" width="8" height="8" rx="1"/>
+              <rect x="22" y="2" width="8" height="8" rx="1" opacity=".36"/>
+              <rect x="2" y="12" width="8" height="8" rx="1"/>
+              <rect x="12" y="12" width="8" height="8" rx="1" opacity=".36"/>
+              <rect x="22" y="12" width="8" height="8" rx="1"/>
+              <rect x="2" y="22" width="8" height="8" rx="1" opacity=".36"/>
+              <rect x="12" y="22" width="8" height="8" rx="1"/>
+              <rect x="22" y="22" width="8" height="8" rx="1" opacity=".36"/>
+            </svg>
+          </div>
+          <div>
+            <h1>图像隐写系统</h1>
+            <p class="brand-subtitle">LSB 隐写工作台</p>
+          </div>
+        </div>
+        <div class="topbar-actions">
+          <button class="icon-button" id="themeButton" type="button" title="切换明暗主题" aria-label="切换明暗主题">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+            </svg>
+          </button>
+          <div class="server-state" id="serverStatus" role="status" aria-live="polite">连接中</div>
+        </div>
+      </header>
+
+      <nav class="module-tabs" aria-label="功能模块">
+        <button class="module-tab active" type="button" data-module="image" aria-controls="imageModule" aria-pressed="true">图片隐写</button>
+        <button class="module-tab" type="button" data-module="wav" aria-controls="wavModule" aria-pressed="false">音频隐写</button>
+        <button class="module-tab" type="button" data-module="detect" aria-controls="detectModule" aria-pressed="false">检测分析</button>
+      </nav>
+
+      <section class="module active" id="imageModule">
+        <div class="module-intro">
+          <div><h2>图片隐写</h2><p>把文本或文件写入图片，并在需要时完整提取。</p></div>
+          <span class="module-meta">PNG · BMP · JPG 输入 / PNG 输出</span>
+        </div>
+        <section class="tool-panel">
+          <div class="panel-heading">
+            <div>
+              <h3>写入图片</h3>
+              <p class="panel-note">选择载体和隐藏内容，生成可下载的 PNG。</p>
+            </div>
+          </div>
+
+          <form id="imageEmbedForm" class="form-grid">
+            <label class="field span-2">
+              <span>载体图片</span>
+              <div class="file-picker">
+                <input class="file-input" id="carrierInput" name="carrier" type="file" accept=".png,.bmp,.jpg,.jpeg,image/png,image/bmp,image/jpeg" required />
+                <strong>选择图片</strong>
+                <em data-empty="未选择文件">未选择文件</em>
+                <small>支持点击选择或拖入 PNG、BMP、JPG</small>
+              </div>
+            </label>
+
+            <fieldset class="field span-2 payload-box">
+              <legend>隐藏内容</legend>
+              <div class="segmented">
+                <label><input type="radio" name="payload_mode" value="text" checked /> 文本</label>
+                <label><input type="radio" name="payload_mode" value="file" /> 文件</label>
+              </div>
+              <textarea id="imageSecretText" name="secret_text" rows="5" placeholder="输入需要写入图片的内容"></textarea>
+              <div class="file-picker muted-file">
+                <input class="file-input" id="imageSecretFile" name="secret_file" type="file" />
+                <strong>选择载荷文件</strong>
+                <em data-empty="未选择文件">未选择文件</em>
+                <small>支持任意二进制文件</small>
+              </div>
+            </fieldset>
+
+            <label class="field">
+              <span>LSB 位数 <output id="imageLsbValue">2</output></span>
+              <input id="imageLsb" name="num_lsb" type="range" min="1" max="8" value="2" />
+            </label>
+
+            <label class="field">
+              <span>PNG 压缩 <output id="compressionValue">6</output></span>
+              <input id="compression" name="compression" type="range" min="0" max="9" value="6" />
+            </label>
+
+            <div class="actions span-2">
+              <button class="secondary-action" type="button" id="imageAnalyzeBtn">容量分析</button>
+              <button class="primary-action" type="submit">生成隐写图片</button>
+            </div>
+          </form>
+
+          <div class="result-bar" id="imageEmbedResult" hidden></div>
+
+          <div class="preview-grid">
+            <figure class="preview" data-preview-id="carrierPreview" data-preview-alt="载体图片预览">
+              <figcaption>载体图片</figcaption>
+              <div class="empty-state">选择图片后在此预览</div>
+            </figure>
+            <figure class="preview" data-preview-id="encodedPreview" data-preview-alt="输出图片预览">
+              <figcaption>输出图片</figcaption>
+              <div class="empty-state">生成后在此对照查看</div>
+            </figure>
+          </div>
+        </section>
+
+        <section class="tool-panel extract-panel">
+          <div class="panel-heading">
+            <div>
+              <h3>从图片提取</h3>
+              <p class="panel-note">使用写入时相同的 LSB 位数。</p>
+            </div>
+          </div>
+
+          <form id="imageExtractForm" class="form-grid">
+            <label class="field span-2">
+              <span>隐写图片</span>
+              <div class="file-picker">
+                <input class="file-input" id="stegoInput" name="stego" type="file" accept=".png,.bmp,.jpg,.jpeg,image/png,image/bmp,image/jpeg" required />
+                <strong>选择隐写图片</strong>
+                <em data-empty="未选择文件">未选择文件</em>
+                <small>提取时需要使用相同 LSB 位数</small>
+              </div>
+            </label>
+            <label class="field">
+              <span>LSB 位数 <output id="imageExtractLsbValue">2</output></span>
+              <input id="imageExtractLsb" name="num_lsb" type="range" min="1" max="8" value="2" />
+            </label>
+            <div class="actions">
+              <button class="primary-action" type="submit">提取内容</button>
+            </div>
+          </form>
+
+          <div class="result-bar" id="imageExtractResult" hidden></div>
+
+          <div class="decode-grid">
+            <figure class="preview" data-preview-id="stegoPreview" data-preview-alt="隐写图片预览">
+              <figcaption>隐写图片</figcaption>
+              <div class="empty-state">选择隐写图片后在此预览</div>
+            </figure>
+            <label class="field output-field">
+              <span>文本结果</span>
+              <textarea id="imageRecoveredText" rows="10" readonly placeholder="可识别的 UTF-8 文本会显示在这里"></textarea>
+            </label>
+          </div>
+        </section>
+      </section>
+
+      <section class="module" id="wavModule">
+        <div class="module-intro">
+          <div><h2>音频隐写</h2><p>在 WAV 音频中隐藏文本或文件，并从隐写音频中恢复。</p></div>
+          <span class="module-meta">WAV 输入 / WAV 输出</span>
+        </div>
+        <section class="tool-panel">
+          <div class="panel-heading">
+            <div>
+              <h3>写入音频</h3>
+              <p class="panel-note">标准 WAV 音频可用作载体。</p>
+            </div>
+          </div>
+
+          <form id="wavEmbedForm" class="form-grid">
+            <label class="field span-2">
+              <span>载体 WAV</span>
+              <div class="file-picker">
+                <input class="file-input" id="wavCarrierInput" name="wav_carrier" type="file" accept=".wav,audio/wav,audio/x-wav" required />
+                <strong>选择 WAV</strong>
+                <em data-empty="未选择文件">未选择文件</em>
+                <small>仅支持标准 WAV 音频</small>
+              </div>
+            </label>
+
+            <fieldset class="field span-2 payload-box">
+              <legend>隐藏内容</legend>
+              <div class="segmented">
+                <label><input type="radio" name="payload_mode" value="text" checked /> 文本</label>
+                <label><input type="radio" name="payload_mode" value="file" /> 文件</label>
+              </div>
+              <textarea id="wavSecretText" name="wav_secret_text" rows="5" placeholder="输入需要写入音频的内容"></textarea>
+              <div class="file-picker muted-file">
+                <input class="file-input" id="wavSecretFile" name="wav_secret_file" type="file" />
+                <strong>选择载荷文件</strong>
+                <em data-empty="未选择文件">未选择文件</em>
+                <small>支持任意二进制文件</small>
+              </div>
+            </fieldset>
+
+            <label class="field">
+              <span>LSB 位数 <output id="wavLsbValue">2</output></span>
+              <input id="wavLsb" name="num_lsb" type="range" min="1" max="8" value="2" />
+            </label>
+
+            <div class="actions">
+              <button class="secondary-action" type="button" id="wavAnalyzeBtn">容量分析</button>
+              <button class="primary-action" type="submit">生成隐写音频</button>
+            </div>
+          </form>
+
+          <div class="result-bar" id="wavEmbedResult" hidden></div>
+
+          <div class="audio-box">
+            <span>输出音频</span>
+            <audio id="encodedAudio" controls></audio>
+          </div>
+
+        </section>
+
+        <section class="tool-panel extract-panel">
+          <div class="panel-heading">
+            <div>
+              <h3>从音频提取</h3>
+              <p class="panel-note">本系统生成的 WAV 可自动识别载荷长度。</p>
+            </div>
+          </div>
+
+          <form id="wavExtractForm" class="form-grid">
+            <label class="field span-2">
+              <span>隐写 WAV</span>
+              <div class="file-picker">
+                <input class="file-input" id="wavStegoInput" name="wav_stego" type="file" accept=".wav,audio/wav,audio/x-wav" required />
+                <strong>选择隐写 WAV</strong>
+                <em data-empty="未选择文件">未选择文件</em>
+                <small>本系统生成的 WAV 可自动识别载荷长度</small>
+              </div>
+            </label>
+
+            <label class="field">
+              <span>LSB 位数 <output id="wavExtractLsbValue">2</output></span>
+              <input id="wavExtractLsb" name="num_lsb" type="range" min="1" max="8" value="2" />
+            </label>
+
+            <label class="field">
+              <span>恢复字节数</span>
+              <input id="recoverBytes" name="recover_bytes" type="number" min="1" placeholder="自动识别可留空" />
+            </label>
+
+            <button class="primary-action span-2" type="submit">提取内容</button>
+          </form>
+
+          <div class="result-bar" id="wavExtractResult" hidden></div>
+
+          <label class="field output-field">
+            <span>文本结果</span>
+            <textarea id="wavRecoveredText" rows="8" readonly placeholder="可识别的 UTF-8 文本会显示在这里"></textarea>
+          </label>
+
+        </section>
+      </section>
+
+      <section class="module" id="detectModule">
+        <div class="module-intro">
+          <div><h2>检测分析</h2><p>查看图片最低有效位的可视化结果，辅助观察嵌入痕迹。</p></div>
+          <span class="module-meta">最低位可视化</span>
+        </div>
+        <section class="tool-panel wide">
+          <div class="panel-heading">
+            <div>
+              <h3>生成最低位视图</h3>
+              <p class="panel-note">选择图片和显示位数，对照原图查看结果。</p>
+            </div>
+          </div>
+
+          <form id="detectForm" class="form-grid">
+            <label class="field span-2">
+              <span>待分析图片</span>
+              <div class="file-picker">
+                <input class="file-input" id="detectInput" name="detect_image" type="file" accept=".png,.bmp,.jpg,.jpeg,image/png,image/bmp,image/jpeg" required />
+                <strong>选择图片</strong>
+                <em data-empty="未选择文件">未选择文件</em>
+                <small>生成最低有效位可视化图</small>
+              </div>
+            </label>
+            <label class="field">
+              <span>显示 LSB 位数 <output id="detectLsbValue">1</output></span>
+              <input id="detectLsb" name="num_lsb" type="range" min="1" max="8" value="1" />
+            </label>
+            <button class="primary-action" type="submit">生成可视化图</button>
+          </form>
+
+          <div class="result-bar" id="detectResult" hidden></div>
+
+          <div class="preview-grid">
+            <figure class="preview" data-preview-id="detectPreview" data-preview-alt="待分析图片预览">
+              <figcaption>原图</figcaption>
+              <div class="empty-state">选择图片后在此预览</div>
+            </figure>
+            <figure class="preview" data-preview-id="detectOutputPreview" data-preview-alt="最低位可视化图">
+              <figcaption>最低位视图</figcaption>
+              <div class="empty-state">生成后在此对照查看</div>
+            </figure>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="/app.js?v=5"></script>
+  </body>
+</html>
